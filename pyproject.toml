@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "QuadSnap"
+version = "2023.6.30"
+description = "Split Midjourney 2x2 grid into 4 images"
+authors = ["Tremeschin"]
+license = "MIT"
+
+[[tool.poetry.packages]]
+include = "QuadSnap"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+broken = {path="../../", develop=true}
+pillow = "^9.5.0"
+pyperclip = "^1.8.2"
+
+[tool.poetry.scripts]
+quadsnap = "QuadSnap.__main__:main"
