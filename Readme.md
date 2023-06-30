@@ -14,13 +14,8 @@ Automatically opens the output directory first time
 
 # Installation
 
-## Prebuilt Binaries
+### Prebuilt Binaries
 Grab the latest release for your platform [Here](https://github.com/BrokenSource/QuadSnap/releases/latest)
 
-## Running from the Source Code
+### Running from the Source Code
 Follow instructions on our [Monorepo](https://github.com/BrokenSource/BrokenSource)
-
-<br/>
-
-# License
-MIT License
