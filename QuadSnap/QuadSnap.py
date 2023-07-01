@@ -70,7 +70,7 @@ class QuadSnap:
 
     # # Core logic of QuadSnap
 
-    def snap(self, this: Tuple[Path, URL], recursive: bool=True) -> List[PilImage]:
+    def snap(self, this: Tuple[Path, URL], recursive: bool=True, grid_size=2) -> List[PilImage]:
         """Snap an Midjourney image from a path or url into 4 quadrants"""
 
         # If it's a directory, snap everything on it
@@ -92,19 +92,18 @@ class QuadSnap:
 
         # Break the image into 4 quadrants
         # Without using BrokenImageUtils
-        w, h = image.size[0]//2, image.size[1]//2
+        w, h = image.size[0]//grid_size, image.size[1]//grid_size
 
-        # Crop image into the quadrants
+        # Crop image into the quadrants based on grid_size
         quadrants = [
-            image.crop((0, 0,   w, h  )),
-            image.crop((w, 0, w*2, h  )),
-            image.crop((0, h,   w, h*2)),
-            image.crop((w, h, w*2, h*2))
+            image.crop((j*w, i*h, (j+1)*w, (i+1)*h))
+            for i in range(grid_size)
+            for j in range(grid_size)
         ]
 
         # # Save the quadrants
         for i, quadrant in enumerate(quadrants):
-            output = self.OUTPUT_DIRECTORY/f"{Path(this).stem}_{i}.jpg"
+            output = self.OUTPUT_DIRECTORY/f"{Path(this).stem}-{i+1}.jpg"
             info(f"Saving [Quadrant {i}] to [{output}]")
             quadrant.save(output, quality=100)
 

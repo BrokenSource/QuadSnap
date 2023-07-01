@@ -1,14 +1,24 @@
 <div align="center">
   <h1>QuadSnap</h1>
+
+  A **complete** script to **split midjourney** generations into the individual images
+
+  <br/>
+  <h3>Table of Features</h3>
+
+  | Feature                    | Linux | Windows | MacOS |
+  | -------------------------- | ----- | ------- | ----- |
+  | Link - URL From Clipboard  | ✅    | ✅      | ❔    |
+  | File From Clipboard        | ✅    | ❌      | ❔    |
+  | Directory From Clipboard   | ✅    | ❌      | ❔    |
+  | Drag and Drop File         | ✅    | ✅      | ❔    |
+  | Drag and Drop Directory    | ✅    | ✅      | ❔    |
+
 </div>
 
-A complete script to split Midjourney images into their 4 quadrants
-
-- Open the executable and `Ctrl+C` any image URL, file or directory in your computer
-
-- Drag and drop any image or directory into the executable
-
-Automatically opens the output directory first time
+- ✅ = Supported
+- ❌ = Not implemented
+- ❔ = Unknown but likely to work
 
 <br/>
 
