@@ -14,6 +14,8 @@ Automatically opens the output directory first time
 
 # Installation
 
+<sub><i><b>Note:</b>Linux needs `xclip` installed</i></sub>
+
 ### Prebuilt Binaries
 Grab the latest release for your platform [Here](https://github.com/BrokenSource/QuadSnap/releases/latest)
 

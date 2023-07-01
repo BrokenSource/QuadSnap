@@ -12,7 +12,6 @@ include = "QuadSnap"
 python = ">=3.10,<3.13"
 broken = {path="../../", develop=true}
 pillow = "^9.5.0"
-pyperclip = "^1.8.2"
 
 [tool.poetry.scripts]
 quadsnap = "QuadSnap.__main__:main"
