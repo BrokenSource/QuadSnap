@@ -1,5 +1,6 @@
 from QuadSnap import *
 
+
 def main():
     QuadSnap()
 

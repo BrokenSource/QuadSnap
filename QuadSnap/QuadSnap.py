@@ -1,5 +1,6 @@
 from QuadSnap import *
 
+
 def get_clipboard() -> str:
     """Get clipboard contents"""
     try:
