@@ -1,5 +1,6 @@
 from QuadSnap import *
 
+get_binary_cached = lru_cache()(BrokenPath.get_binary)
 
 def get_clipboard() -> str:
     """Get clipboard contents"""
@@ -31,7 +32,7 @@ class QuadSnap:
 
             # Change output directory relative to executable
             self.OUTPUT_DIRECTORY = QUADSNAP_DIRECTORIES.EXECUTABLE/"QuadSnapped"
-            mkdir(self.OUTPUT_DIRECTORY)
+            BrokenPath.mkdir(self.OUTPUT_DIRECTORY)
 
             # Snap argv inputs
             for arg in argv[1:]:
@@ -110,5 +111,5 @@ class QuadSnap:
 
         # Open output directory on first snap
         if QuadSnap.FIRST_TIME:
-            open_in_file_explorer(self.OUTPUT_DIRECTORY)
+            BrokenPath.open_in_file_explorer(self.OUTPUT_DIRECTORY)
             QuadSnap.FIRST_TIME = False
