@@ -5,12 +5,12 @@ get_binary_cached = lru_cache()(BrokenPath.get_binary)
 def get_clipboard() -> str:
     """Get clipboard contents"""
     try:
-        if BrokenPlatform.Linux:
+        if BrokenPlatform.OnLinux:
             return shell(get_binary_cached("xclip"), "-selection", "clipboard", "-o", echo=False, output=True).strip()
-        elif BrokenPlatform.Windows:
+        elif BrokenPlatform.OnWindows:
             # FIXME: Get -Format FileDropList and maybe -Format Image to work, might need to unset them afterwards
             return shell(get_binary_cached("powershell"), "Get-Clipboard", echo=False, output=True).strip()
-        elif BrokenPlatform.MacOS:
+        elif BrokenPlatform.OnMacOS:
             return shell(get_binary_cached("pbpaste"), "r", echo=False, output=True).strip()
         else:
             error(f"Unknown Platform [{BrokenPlatform.Name}] to get clipboard")
