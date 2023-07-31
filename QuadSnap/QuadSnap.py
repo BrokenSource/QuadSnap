@@ -13,7 +13,7 @@ def get_clipboard() -> str:
         elif BrokenPlatform.OnMacOS:
             return shell(get_binary_cached("pbpaste"), "r", echo=False, output=True).strip()
         else:
-            error(f"Unknown Platform [{BrokenPlatform.Name}] to get clipboard")
+            log.error(f"Unknown Platform [{BrokenPlatform.Name}] to get clipboard")
             return None
     except UnicodeDecodeError:
         return None
@@ -28,7 +28,7 @@ class QuadSnap:
 
         # Images can be drag and dropped to the binary, snap them
         if len(argv) > 1:
-            info("Snapping argv inputs to current directory")
+            log.info("Snapping argv inputs to current directory")
 
             # Change output directory relative to executable
             self.OUTPUT_DIRECTORY = QUADSNAP_DIRECTORIES.EXECUTABLE/"QuadSnapped"
@@ -44,19 +44,19 @@ class QuadSnap:
         Thread(target=self.watchdog_stdin,     daemon=True).start()
 
         # Main thread to wait infinitely
-        while True: sleep(1)
+        while True: time.sleep(1)
 
     # # Watchdog functions
 
     def watchdog_stdin(self) -> None:
-        success("Watching clipboard for new images - File, Directory or URL")
-        warning("• You can also drag and drop files here and press Enter to snap them")
-        warning("• Directories are recursively snapped")
-        warning("• Input nothing to exit or close this window")
-        info(f"Will save resulting images on [{self.OUTPUT_DIRECTORY}]")
+        log.success("Watching clipboard for new images - File, Directory or URL")
+        log.warning("• You can also drag and drop files here and press Enter to snap them")
+        log.warning("• Directories are recursively snapped")
+        log.warning("• Input nothing to exit or close this window")
+        log.info(f"Will save resulting images on [{self.OUTPUT_DIRECTORY}]")
         while True:
             if (snap := input("")) == "":
-                system.exit(1)
+                exit(1)
             self.snap(this=snap)
 
     def watchdog_clipboard(self) -> None:
@@ -65,10 +65,10 @@ class QuadSnap:
         while True:
             self.clipboard = get_clipboard()
             if self.clipboard != old_clipboard:
-                info(f"Clipboard updated to [{self.clipboard}]")
+                log.info(f"Clipboard updated to [{self.clipboard}]")
                 old_clipboard = self.clipboard
                 self.snap(this=self.clipboard)
-            sleep(0.1)
+            time.sleep(0.1)
 
     # # Core logic of QuadSnap
 
@@ -90,7 +90,7 @@ class QuadSnap:
 
         # # Success, image is something
 
-        success(f"Snapping image [{this}]")
+        log.success(f"Snapping image [{this}]")
 
         # Break the image into 4 quadrants
         # Without using BrokenImageUtils
@@ -106,7 +106,7 @@ class QuadSnap:
         # # Save the quadrants
         for i, quadrant in enumerate(quadrants):
             output = self.OUTPUT_DIRECTORY/f"{Path(this).stem}-{i+1}.jpg"
-            info(f"Saving [Quadrant {i}] to [{output}]")
+            log.info(f"Saving [Quadrant {i}] to [{output}]")
             quadrant.save(output, quality=100)
 
         # Open output directory on first snap
