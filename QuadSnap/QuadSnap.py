@@ -24,14 +24,14 @@ class QuadSnap:
     FIRST_TIME = True
 
     def __init__(self) -> None:
-        self.OUTPUT_DIRECTORY = QUADSNAP_DIRECTORIES.DATA
+        self.OUTPUT_DIRECTORY = QUADSNAP.DIRECTORIES.DATA
 
         # Images can be drag and dropped to the binary, snap them
         if len(argv) > 1:
             log.info("Snapping argv inputs to current directory")
 
             # Change output directory relative to executable
-            self.OUTPUT_DIRECTORY = QUADSNAP_DIRECTORIES.PACKAGE/"QuadSnapped"
+            self.OUTPUT_DIRECTORY = QUADSNAP.DIRECTORIES.PACKAGE/"QuadSnapped"
             BrokenPath.mkdir(self.OUTPUT_DIRECTORY)
 
             # Snap argv inputs
@@ -82,7 +82,7 @@ class QuadSnap:
             return
 
         # Attempt loading the image from path, url
-        image = BrokenSmart.load_image(this, echo=False)
+        image = BrokenUtils.load_image(this, echo=False)
 
         # Return if input isn't an image
         if image is None:

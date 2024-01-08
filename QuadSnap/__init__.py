@@ -1,5 +1,9 @@
 from Broken import *
 
-QUADSNAP_DIRECTORIES = BrokenDirectories(app_name="QuadSnap", app_author="BrokenSource", echo=False)
+QUADSNAP = BrokenProject(
+    PACKAGE=__file__,
+    APP_NAME="QuadSnap",
+    APP_AUTHOR="BrokenSource",
+)
 
 from QuadSnap.QuadSnap import *
