@@ -1,3 +1,5 @@
+import pyperclip
+
 from Broken import *
 
 QUADSNAP = BrokenProject(

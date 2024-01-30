@@ -3,7 +3,8 @@ from QuadSnap import *
 
 def main():
     QUADSNAP.welcome()
-    QuadSnap()
+    app = QuadSnap()
+    app.run()
 
 if __name__ == "__main__":
     main()

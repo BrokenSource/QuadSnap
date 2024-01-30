@@ -1,17 +1,24 @@
 [tool.poetry]
-name = "QuadSnap"
-version = "2023.8.10"
+name        = "QuadSnap"
+version     = "2024.1.28"
 description = "Split Midjourney 2x2 grid into 4 images"
-authors = ["Tremeschin <tremeschin@users.noreply.github.com>"]
-license = "MIT"
+authors     = ["Tremeschin <tremeschin@users.noreply.github.com>"]
+license     = "MIT"
 
 [[tool.poetry.packages]]
 include = "QuadSnap"
 
+[build-system]
+requires      = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-broken = {path="../../", develop=true}
-pillow = "^9.5.0"
+python    = ">=3.10,<3.13"
+pillow    = "^9.5.0"
+pyperclip = "^1.8.2"
+
+[tool.poetry.dev-dependencies]
+broken-source = {path="../../", develop=true}
 
 [tool.poetry.scripts]
 quadsnap = "QuadSnap.__main__:main"
