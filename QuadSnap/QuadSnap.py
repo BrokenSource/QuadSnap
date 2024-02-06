@@ -2,7 +2,7 @@ from . import *
 
 
 @define
-class QuadSnap:
+class QuadSnap(BrokenApp):
     OUTPUT = QUADSNAP.DIRECTORIES.PACKAGE/"Snap" if BROKEN_RELEASE else QUADSNAP.DIRECTORIES.DATA
 
     @staticmethod
@@ -69,7 +69,7 @@ class QuadSnap:
         for snap in self.watchdog_clipboard():
             self.cli_snap(snap)
 
-    def run(self) -> None:
+    def cli(self) -> None:
 
         # Snap from argv inputs (direct script usage)
         if len(sys.argv) > 1:
