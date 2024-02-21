@@ -22,12 +22,20 @@
 
 <br/>
 
-# Installation
+# 📦 Installation
+
+> 🔴🟡🟢
+>
+> **Download** our [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code) with all the code and Projects first
+>
+> <sub><b>Note:</b> You cannot run this project in dev mode without the <i>Framework!</i></sub>
 
 <sub><i><b>Note:</b>Linux needs `xclip` installed</i></sub>
 
+## Running from Source Code
+After running the `brakeit` script on the [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code) and inside the Virtual Environment,
+
+- Run the command: `broken quadsnap`
+
 ### Prebuilt Binaries
 Grab the latest release for your platform [Here](https://github.com/BrokenSource/QuadSnap/releases/latest)
-
-### Running from the Source Code
-Follow instructions on our [Monorepo](https://github.com/BrokenSource/BrokenSource)
