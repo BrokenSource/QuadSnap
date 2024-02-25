@@ -28,7 +28,7 @@
 >
 > **Download** our [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code) with all the code and Projects first
 >
-> <sub><b>Note:</b> You cannot run this project in dev mode without the <i>Framework!</i></sub>
+> <sub><b>Note:</b> You cannot run this project in development mode without it !</sub>
 
 <sub><i><b>Note:</b>Linux needs `xclip` installed</i></sub>
 
