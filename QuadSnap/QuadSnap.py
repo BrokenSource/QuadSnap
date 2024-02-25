@@ -21,7 +21,7 @@ class QuadSnap(BrokenApp):
             return
 
         # Load image and calculate block resolutions
-        image = BrokenUtils.load_image(image, echo=echo)
+        image = LoaderImage(image, echo=echo)
         w, h = image.size[0]//grid_size, image.size[1]//grid_size
 
         # Crop and yield each block: top to bottom, left to right
@@ -34,7 +34,7 @@ class QuadSnap(BrokenApp):
 
     def cli_snap(self, thing: Option[Image, URL, Path]):
         """Snap and save to a Filename or URL Stem"""
-        if (image := BrokenUtils.load_image(thing, echo=False)):
+        if (image := LoaderImage(thing, echo=False)):
             print()
             log.success(f"Snapping Image {thing}")
             for i, block in enumerate(QuadSnap.snap(image)):
