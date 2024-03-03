@@ -24,11 +24,21 @@
 
 # 📦 Installation
 
-> 🔴🟡🟢
+> 🔴🟡🟢&nbsp; **For Extra installation Help**, check out the [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code)
 >
-> **Download** our [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code) with all the code and Projects first
+> - **🐧 Linux and MacOS 🍎**: Open a Terminal in some Folder and run:
+>   ```ps
+>   sh -c "$(curl -sS https://brokensource.github.io/get.sh)"
+>   ```
 >
-> <sub><b>Note:</b> You cannot run this project in development mode without it !</sub>
+> - **💠 Windows**: Open a PowerShell in some Folder and run:
+>   ```ps
+>   irm https://brokensource.github.io/get.ps1 | iex
+>   ```
+>
+> <sub><b>Note:</b> The commands above are the simplified version and assumes installed dependencies
+
+<br>
 
 <sub><i><b>Note:</b>Linux needs `xclip` installed</i></sub>
 
