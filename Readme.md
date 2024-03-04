@@ -28,7 +28,7 @@
 >
 > - **🐧 Linux and MacOS 🍎**: Open a Terminal in some Folder and run:
 >   ```ps
->   sh -c "$(curl -sS https://brokensource.github.io/get.sh)"
+>   /bin/bash -c "$(curl -sS https://brokensource.github.io/get.sh)"
 >   ```
 >
 > - **💠 Windows**: Open a PowerShell in some Folder and run:
