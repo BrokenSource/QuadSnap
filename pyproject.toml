@@ -1,6 +1,6 @@
 [tool.poetry]
 name        = "QuadSnap"
-version     = "2024.2.6"
+version     = "2024.3.14"
 description = "Split Midjourney 2x2 grid into 4 images"
 authors     = ["Tremeschin <tremeschin@users.noreply.github.com>"]
 license     = "MIT"
